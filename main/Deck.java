@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Deck {
     private Card[] cards = new Card [52];
-    private int cardCount = 52;
+    private int cardCount = 52; //this will decrement as we pull cards
 
     public Deck() {
     }
