@@ -59,4 +59,13 @@ public class Card{
         return getName() + " of " + getSuit();
     }
 
+    // used generate code method tool; used for comparing if two card objects are equaled
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if(!(o instanceof Card)) return false;
+        Card c = (Card)o;
+        return getRank() == c.getRank() && getSuit().equals(c.getSuit());
+    }
+
 }

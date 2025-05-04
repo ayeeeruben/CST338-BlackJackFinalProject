@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Deck {
-    private Card[] cards = new Card [52];
+    private ArrayList<Card> cards = new ArrayList<Card>(52);
     private int cardCount = 52; //this will decrement as we pull cards
     private static final String[] suits = new String[] {"Hearts","Diamonds","Clubs","Spades"};
 
@@ -10,17 +10,22 @@ public class Deck {
     }
 
     public void generateDeck(){
-        int j = 0;
+        //loops through every suit and for every suit it loops 13 times (makes a card for every rank and suit)
         for(int i = 0; i < suits.length; i++) {
             for(int k = 1; k <= 13; k++) {
-                cards[j] = new Card(k, suits[i]);
-                j++;
+                cards.add(new Card(k, suits[i]));
             }
         }
 
     }
     public void removeCard(Card card) {
+        if(cards.remove(card)) {
+            cardCount--;
+        }
+    }
 
+    public ArrayList<Card> getDeck() {
+        return cards;
     }
 
 }
