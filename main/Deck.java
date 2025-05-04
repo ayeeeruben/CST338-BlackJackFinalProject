@@ -12,7 +12,7 @@ public class Deck {
     public void generateDeck(){
         int j = 0;
         for(int i = 0; i < suits.length; i++) {
-            for(int k = 0; k < 13; k++) {
+            for(int k = 1; k <= 13; k++) {
                 cards[j] = new Card(k, suits[i]);
                 j++;
             }
