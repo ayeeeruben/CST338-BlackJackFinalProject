@@ -3,8 +3,11 @@ import java.util.Map;
 
 public class Card{
     private int rank;
-    private char suit;
+    private String suit;
+
+    // hashmap to store the rank name of the card and the actual value; made to address face cards
     private static final Map<String, Integer> values = new HashMap<>();
+
     // made static so only one copy of this map will be shared and used by all
     // other instances of card, saving memory.
     static {
@@ -23,7 +26,7 @@ public class Card{
         values.put("Ace", 11);
     }
 
-    public Card(int rank, char suit){
+    public Card(int rank, String suit){
         this.rank = rank;
         this.suit = suit;
     }
@@ -32,7 +35,7 @@ public class Card{
         return rank;
     }
 
-    public char getSuit(){
+    public String getSuit(){
         return suit;
     }
 
@@ -50,6 +53,10 @@ public class Card{
     public int getValue(){
         String name = getName();
         return values.get(name);
+    }
+
+    public String toString(){
+        return getName() + " of " + getSuit();
     }
 
 }
