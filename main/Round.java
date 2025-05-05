@@ -1,16 +1,22 @@
 public class Round {
-
-    Hand currentHand;
+    private Hand dealertHand;
+    private Hand playerHand;
+    private Deck currentDeck;
 
     public Round() {
-        currentHand = new Hand();
+        playerHand = new Hand();
+        currentDeck = new Deck();
+        dealertHand = new Hand();
     }
 
     public void gameRun(){
+        currentDeck.generateDeck();
 
     }
 
     public void quit(){
-
+        return;
     }
+
+
 }
