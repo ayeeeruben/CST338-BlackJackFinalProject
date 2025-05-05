@@ -11,7 +11,7 @@ public class Main{
 
 
         //testing card
-        Card card1 = new Card(13, "Hearts"); // Ace of Hearts
+        Card card1 = new Card(13, "Hearts"); // King of Hearts test
         System.out.println(card1.getName()); // "King"
         System.out.println(card1.getValue()); // 10
         System.out.println(card1.toString()); // "King of Hearts"
