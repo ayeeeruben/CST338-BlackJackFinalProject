@@ -10,11 +10,19 @@ public class Hand {
     }
 
     public void getHit(Card card) {
-
+        //getHit will take in a card, add it to the hand and update the score
+        cards.add(card);
+        score += card.getValue(); //are we assuming aces are always 11? if not that could be solved here
     }
 
-    public void reset() {
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
 
+
+    public void reset() {
+        score = 0;
+        cards = new ArrayList<>();
     }
 
     public int calculateScore() {
