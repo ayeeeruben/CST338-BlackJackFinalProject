@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class Deck {
-    private ArrayList<Card> cards = new ArrayList<Card>(52);
+    private ArrayList<Card> cards = new ArrayList<>(52);
     private int cardCount = 52; //this will decrement as we pull cards
     private static final String[] suits = new String[] {"Hearts","Diamonds","Clubs","Spades"};
 
