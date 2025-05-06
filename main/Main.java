@@ -34,7 +34,12 @@ public class Main{
         for (Card card : deck.getDeck()) {
             System.out.println(card);
         }
-        System.out.println("\nSize: " + deck.getDeck().size());
+        System.out.println("\nSize: " + deck.getDeck().size() + "\n");
+
+        deck.shuffle();
+        for (Card card : deck.getDeck()) {
+            System.out.println(card);
+        }
 
 
 
