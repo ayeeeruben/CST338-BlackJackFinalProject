@@ -18,9 +18,9 @@ public class CardTest {
     void testGetValue() {
         assertEquals(5, new Card(5, "Hearts").getValue());
         assertEquals(11, new Card(1, "Hearts").getValue());     // Aces value gets set to 11
-        assertEquals(10, new Card(11, "Clubs").getValue());     // Jack ranks 11, but value 10?
-        assertEquals(10, new Card(12, "Spades").getValue());    // Queen ranks 12, but value 10?
-        assertEquals(10, new Card(13, "Diamonds").getValue());  // King ranks 13, but value 10?
+        assertEquals(10, new Card(11, "Clubs").getValue());     // Jack ranks 11, but value 10 bc blackjack rules
+        assertEquals(10, new Card(12, "Spades").getValue());    // Queen ranks 12, but value 10
+        assertEquals(10, new Card(13, "Diamonds").getValue());  // King ranks 13, but value 10
     }
 
     @Test
