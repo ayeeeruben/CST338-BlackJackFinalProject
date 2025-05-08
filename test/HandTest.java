@@ -13,14 +13,22 @@ class HandTest {
 
     @org.junit.jupiter.api.Test
     void getHit() {
+        int originalSize = h1.getCards().size();
+        h1.getHit(new Card(2, "Clubs"));
+        assertEquals(originalSize + 1, h1.getCards().size());
+        assertEquals("Clubs", h1.getCards().get(originalSize).getSuit());
     }
 
     @org.junit.jupiter.api.Test
     void getCards() {
+        assertEquals(3, h1.getCards().size());
+        assertEquals("Hearts", h1.getCards().get(0).getSuit());
     }
 
     @org.junit.jupiter.api.Test
     void reset() {
+        h1.reset();
+        assertEquals(0, h1.getCards().size());
     }
 
     @org.junit.jupiter.api.Test
@@ -30,5 +38,12 @@ class HandTest {
 
     @org.junit.jupiter.api.Test
     void hasBlackJack() {
+        assertFalse(h1.hasBlackJack()); // score: Ace (11) + 10 + 5 = 26, then reduce Ace to 1, so total = 16
+                                        // 16 not blackJack score
+        Hand blackjackHand = new Hand();
+        blackjackHand.getHit(new Card(1, "Hearts"));
+        blackjackHand.getHit(new Card(10, "Spades"));
+        assertTrue(blackjackHand.hasBlackJack());   // valid blackJack score: Ace (11) + 10 = 21
+
     }
 }
