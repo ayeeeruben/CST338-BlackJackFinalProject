@@ -1,8 +1,15 @@
+import java.util.Random;
+import java.util.Scanner;
+
 public class Game{
-    private Round currentRound;
+
     private static int winCount;
     private static int loseCount;
     private static int tieCount;
+
+    private Hand dealerHand;
+    private Hand playerHand;
+    private Deck currentDeck;
 
     static {
         winCount = 0;
@@ -11,13 +18,20 @@ public class Game{
     }
 
     public Game(){
-        startGame();
+        currentDeck = new Deck();
+        currentDeck.shuffle();
+        playerHand = new Hand(currentDeck);
+        dealerHand = new Hand(currentDeck);
     }
 
-    public void startGame(){
-        Round runningRound = new Round();
-        do {
+    public Game(Random r){
+        currentDeck = new Deck();
+        currentDeck.shuffle(r);
+        playerHand = new Hand(currentDeck);
+        dealerHand = new Hand(currentDeck);
+    }
 
-        } while (true);
+    public void quit(){
+        return;
     }
 }

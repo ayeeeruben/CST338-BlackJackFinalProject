@@ -16,9 +16,8 @@ public class Main{
         System.out.println(card1.getValue()); // 10
         System.out.println(card1.toString()); // "King of Hearts"
 
-        //testing generate deck
+        //testing generate deck (generates in constructor)
         Deck deck = new Deck();
-        deck.generateDeck();
 
         //prints deck BEFORE removing
         System.out.println("\nBEFORE");
@@ -28,7 +27,7 @@ public class Main{
 
         Card cRemove = new Card(13, "Hearts");
         System.out.println("\nRemoving: " + cRemove);
-        deck.removeCard(cRemove);
+        deck.removeCard();
         //prints deck AFTER removing
         System.out.println("\nAFTER");
         for (Card card : deck.getDeck()) {

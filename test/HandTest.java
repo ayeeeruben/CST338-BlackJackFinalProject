@@ -1,18 +1,22 @@
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class HandTest {
     Hand h1;
+    Deck d1;
+    Random r;
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
-        h1 = new Hand();
-        h1.getHit(new Card(1, "Hearts"));
-        h1.getHit(new Card(11, "Diamonds"));
-        h1.getHit(new Card(5, "Spades"));
+        r = new Random(1);
+        d1 = new Deck(r);
+        h1 = new Hand(d1);
     }
 
     @org.junit.jupiter.api.Test
     void getHit() {
+        h1.getHit();
     }
 
     @org.junit.jupiter.api.Test

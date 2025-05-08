@@ -1,15 +1,22 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class Deck {
     private ArrayList<Card> cards = new ArrayList<>(52);
-    private int cardCount = 52; //this will decrement as we pull cards
     private static final String[] suits = new String[] {"Hearts","Diamonds","Clubs","Spades"};
 
     public Deck() {
+        generateDeck();
+        shuffle();
     }
 
-    public void generateDeck(){
+    public Deck(Random r){
+        generateDeck();
+        shuffle(r);
+    }
+
+    private void generateDeck(){
         //loops through every suit and for every suit it loops 13 times (makes a card for every rank and suit)
         for(int i = 0; i < suits.length; i++) {
             for(int k = 1; k <= 13; k++) {
@@ -18,10 +25,8 @@ public class Deck {
         }
 
     }
-    public void removeCard(Card card) {
-        if(cards.remove(card)) {
-            cardCount--;
-        }
+    public Card removeCard() {
+        return cards.removeLast();
     }
 
     public ArrayList<Card> getDeck() {
@@ -30,6 +35,13 @@ public class Deck {
 
     public void shuffle() {
         Collections.shuffle(cards);
+    }
+
+    public void shuffle(Random r){
+        Collections.shuffle(cards, r);
+        for(int i = 0; i < cards.size(); i++) {
+            System.out.println(cards.get(i));
+        }
     }
 
 }

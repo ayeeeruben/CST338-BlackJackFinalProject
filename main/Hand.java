@@ -2,23 +2,25 @@ import java.util.ArrayList;
 
 public class Hand {
     private ArrayList<Card> cards;
+    private Deck deck;
 
-    public Hand() {
+
+    public Hand(Deck deck) {
+        this.deck = deck;
         cards = new ArrayList<Card>();
-
+        cards.add(deck.removeCard());
+        cards.add(deck.removeCard());
     }
 
-    public void getHit(Card card) {
+    public Card getHit() {
         //getHit will take in a card, add it to the hand and update the score
-        cards.add(card);
+        Card hitCard = deck.removeCard();
+        cards.add(hitCard);
+        return hitCard;
     }
 
     public ArrayList<Card> getCards() {
         return cards;
-    }
-
-    public void reset() {
-        cards = new ArrayList<>();
     }
 
     public int calculateScore() {
