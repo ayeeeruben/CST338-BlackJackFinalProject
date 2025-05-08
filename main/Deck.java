@@ -39,9 +39,11 @@ public class Deck {
 
     public void shuffle(Random r){
         Collections.shuffle(cards, r);
+        System.out.println("Bottom to top of Deck:");
         for(int i = 0; i < cards.size(); i++) {
-            System.out.println(cards.get(i));
+            System.out.println(i + 1 + ": " + cards.get(i));
         }
+        System.out.println("Top of Deck (What is being pulled by hand constructor and getHit): \n");
     }
 
 }

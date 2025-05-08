@@ -16,7 +16,8 @@ class HandTest {
 
     @org.junit.jupiter.api.Test
     void getHit() {
-        h1.getHit();
+        Card c1 = h1.getHit();
+        assertEquals(new Card(9, "Spades"), c1);
     }
 
     @org.junit.jupiter.api.Test
