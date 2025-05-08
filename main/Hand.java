@@ -68,4 +68,8 @@ public class Hand {
         return false;
     }
 
+    public boolean scoreBusts(){
+        return calculateScore() > 21;
+    }
+
 }
